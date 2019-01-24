@@ -1,0 +1,55 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="myauth.android.com.authenticator">
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/MyTheme"
+        android:label="@string/app_name">
+        <service
+            android:name="cookbook.android.com.authenticator.utility.database.AccountAuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+        <service
+            android:name="cookbook.android.com.authenticator.utility.database.DatabaseSyncAdapterService"
+            android:exported="true"
+            android:process=":sync">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/sync_database" />
+        </service>
+        <activity
+            android:label="@string/app_name"
+            android:name="cookbook.android.com.authenticator.Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name="cookbook.android.com.authenticator.Registration">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name="cookbook.android.com.authenticator.FrontPage">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

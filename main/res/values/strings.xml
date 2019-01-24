@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Authenticator</string>
+
+    <string name="footer_placeholder">There will be something here eventually</string>
+
+    <string name="login_button">Login</string>
+    <string name="login_linker">Already signed up? Pop over here to login</string>
+    <string name="name_hint">Enter a name</string>
+    <string name="name_label">Name:</string>
+    <string name="new_password_label">New Password:</string>
+    <string name="password_label">Password:</string>
+    <string name="register_button">Register</string>
+    <string name="register_linker">Never been here before? Just sign up</string>
+    <string name="username_label">Username:</string>
+</resources>
